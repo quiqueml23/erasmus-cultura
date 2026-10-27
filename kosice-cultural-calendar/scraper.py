@@ -185,6 +185,96 @@ def scrape_sfk(session: requests.Session) -> list:
     return events
 
 
+def _iter_jsonld_events(value):
+    """Recorre JSON-LD anidado y devuelve objetos schema.org/Event."""
+    if isinstance(value, list):
+        for item in value:
+            yield from _iter_jsonld_events(item)
+    elif isinstance(value, dict):
+        event_type = value.get("@type")
+        types = event_type if isinstance(event_type, list) else [event_type]
+        if "Event" in types or "MusicEvent" in types or "TheaterEvent" in types:
+            yield value
+        for key in ("@graph", "mainEntity", "itemListElement", "event"):
+            if key in value:
+                yield from _iter_jsonld_events(value[key])
+
+
+def _parse_jsonld_datetime(value):
+    if not value:
+        return None
+    text = str(value).strip()
+    try:
+        return datetime.fromisoformat(text.replace("Z", "+00:00")).replace(tzinfo=None)
+    except ValueError:
+        try:
+            return datetime.strptime(text[:10], "%Y-%m-%d")
+        except ValueError:
+            return None
+
+
+def _jsonld_location(value):
+    if isinstance(value, dict):
+        name = value.get("name", "")
+        address = value.get("address", "")
+        if isinstance(address, dict):
+            address = " ".join(str(address.get(key, "")) for key in ("streetAddress", "postalCode", "addressLocality")).strip()
+        return name or "Košice", address or "Košice"
+    return str(value or "Košice"), "Košice"
+
+
+def scrape_jsonld_source(session: requests.Session, source: dict) -> list:
+    """Importa eventos publicados con schema.org/Event desde una agenda oficial."""
+    source_url = source.get("url")
+    if not source_url or source.get("scrape_mode") != "jsonld":
+        return []
+    events = []
+    try:
+        response = session.get(source_url, headers=HEADERS, timeout=15)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        for script in soup.find_all("script", type="application/ld+json"):
+            try:
+                payload = json.loads(script.string or script.get_text())
+            except (TypeError, json.JSONDecodeError):
+                continue
+            for raw in _iter_jsonld_events(payload):
+                start = _parse_jsonld_datetime(raw.get("startDate"))
+                if not start or not raw.get("name"):
+                    continue
+                location, address = _jsonld_location(raw.get("location"))
+                category = source.get("category", "Cultura general")
+                title = str(raw["name"]).strip()
+                slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:48]
+                event_id = f"{source['id']}-{start:%Y%m%d}-{slug}"
+                offers = raw.get("offers", {})
+                if isinstance(offers, list):
+                    offers = offers[0] if offers else {}
+                price = offers.get("price") if isinstance(offers, dict) else None
+                currency = offers.get("priceCurrency", "EUR") if isinstance(offers, dict) else "EUR"
+                price_info = f"{price} {currency}" if price not in (None, "") else "Consultar ficha oficial"
+                event_url = raw.get("url") or source_url
+                events.append({
+                    "id": event_id,
+                    "title_sk": title,
+                    "category": category,
+                    "venue": location,
+                    "address": address,
+                    "start": start.isoformat(),
+                    "duration_hours": 2.0,
+                    "description": BeautifulSoup(str(raw.get("description", "")), "html.parser").get_text(" ", strip=True),
+                    "ticket_url": event_url,
+                    "event_url": event_url,
+                    "price_info": price_info,
+                    "price_source_url": event_url,
+                    "institution": source.get("name", "Agenda cultural"),
+                    "source_id": source["id"]
+                })
+    except requests.RequestException as error:
+        logging.warning("No se pudo consultar %s: %s", source_url, error)
+    logging.info("%s: %d eventos JSON-LD importados", source.get("name", source_url), len(events))
+    return events
+
 def merge_and_save_events(new_events: list, json_path: str) -> list:
     """Fusiona eventos nuevos con la base de datos existente sin perder información."""
     existing_events = []
@@ -224,9 +314,21 @@ def main():
     session = requests.Session()
 
     new_events = []
-    # Scraping en vivo
+    # Adaptadores específicos de las dos fuentes principales.
     new_events.extend(scrape_sdke(session))
     new_events.extend(scrape_sfk(session))
+
+    # Adaptador genérico para agendas que publican schema.org/Event.
+    sources_path = os.path.join(BASE_DIR, "activity_sources.json")
+    try:
+        with open(sources_path, "r", encoding="utf-8") as file:
+            sources = json.load(file)
+    except (OSError, json.JSONDecodeError) as error:
+        logging.warning("No se pudo leer el catálogo de fuentes: %s", error)
+        sources = []
+    for source in sources:
+        if source.get("id") not in {"ndke", "sfk"}:
+            new_events.extend(scrape_jsonld_source(session, source))
 
     if new_events:
         logging.info("Se extrajeron %d nuevos eventos en vivo.", len(new_events))
