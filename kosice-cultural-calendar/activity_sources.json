@@ -13,18 +13,6 @@
     "adapter": "kino_usmev"
   },
   {
-    "id": "kino-druzba",
-    "name": "Kino Družba / Klub Lúč",
-    "category": "Cine",
-    "area": "Košice",
-    "description": "Sesiones de cine club y actividades cinematográficas de Klub Lúč.",
-    "url": "https://www.klubluc.sk/",
-    "source_type": "Agenda oficial",
-    "scrape_mode": "jsonld",
-    "last_checked": null,
-    "feed_url": "https://www.klubluc.sk/"
-  },
-  {
     "id": "zoo-kosice",
     "name": "Zoo Košice",
     "category": "Zoo y naturaleza",
@@ -133,18 +121,6 @@
     "description": "Directorio de museos, teatros, cines, galerías y actividades culturales de Prešov.",
     "url": "https://www.gopresov.sk/co-robit/kulturne-aktivity/",
     "source_type": "Directorio municipal",
-    "scrape_mode": "jsonld",
-    "last_checked": null
-  },
-  {
-    "id": "klub-luc",
-    "name": "Klub Lúč",
-    "category": "Conciertos y baile",
-    "area": "Košice y alrededores",
-    "description": "Conciertos, teatro, sesiones de DJ, baile y eventos culturales.",
-    "url": "https://www.klubluc.sk/",
-    "feed_url": "https://www.klubluc.sk/",
-    "source_type": "Agenda oficial",
     "scrape_mode": "jsonld",
     "last_checked": null
   }
