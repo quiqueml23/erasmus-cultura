@@ -5,7 +5,7 @@ Proyecto personal para organizar mi estancia Erasmus 2026/27. Cada iniciativa vi
 ## Secciones
 
 ### Calendario cultural de Košice
-Recopila eventos culturales de Košice y publica un calendario iCalendar para suscribirse desde el iPhone.
+Recopila eventos culturales de Košice, permite filtrar categorías y exportar una selección personalizada a iCalendar. Incluye un catálogo ampliable de fuentes de cine, zoo, museos, salas, conciertos y actividades de los alrededores.
 
 - [Abrir la web del calendario](https://quiqueml23.github.io/erasmus-cultura/)
 - [Ver la sección y su documentación](kosice-cultural-calendar/README.md)
