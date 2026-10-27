@@ -34,8 +34,9 @@
     "url": "https://www.cine-max.sk/filmy/program",
     "feed_url": "https://www.cine-max.sk/filmy/program",
     "source_type": "Agenda oficial",
-    "scrape_mode": "jsonld",
-    "last_checked": null
+    "scrape_mode": "html",
+    "last_checked": null,
+    "adapter": "cinemax_kosice"
   },
   {
     "id": "vychodoslovenske-muzeum",
