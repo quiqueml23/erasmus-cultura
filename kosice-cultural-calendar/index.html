@@ -145,10 +145,13 @@
       text-transform: uppercase;
     }
     .event-title {
+      display: block;
       font-size: 1rem;
       font-weight: 700;
       color: #0f172a;
+      text-decoration: none;
     }
+    .event-title:hover { text-decoration: underline; }
     .event-meta {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -283,11 +286,34 @@
           div.className = 'event-item';
           const dt = new Date(ev.start);
           const dateStr = dt.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
-          div.innerHTML = `
-            <div class="event-tag">${ev.category} · ${ev.institution}</div>
-            <div class="event-title">${ev.title_sk}</div>
-            <div class="event-meta">📅 ${dateStr} · 📍 ${ev.venue}</div>
-          `;
+
+          const tag = document.createElement('div');
+          tag.className = 'event-tag';
+          tag.textContent = `${ev.category} · ${ev.institution}`;
+
+          const title = document.createElement('a');
+          title.className = 'event-title';
+          title.href = ev.event_url || ev.ticket_url || '#';
+          title.target = '_blank';
+          title.rel = 'noopener noreferrer';
+          title.textContent = ev.title_sk;
+
+          const meta = document.createElement('div');
+          meta.className = 'event-meta';
+          meta.textContent = `📅 ${dateStr} · 📍 ${ev.venue}`;
+
+          const price = document.createElement('div');
+          price.className = 'event-meta';
+          price.textContent = `🎟️ Precio: ${ev.price_info || 'Consultar ficha oficial'}`;
+
+          const link = document.createElement('a');
+          link.href = ev.event_url || ev.ticket_url || '#';
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = 'Ver evento oficial';
+          link.className = 'event-meta';
+
+          div.append(tag, title, meta, price, link);
           container.appendChild(div);
         });
       })
