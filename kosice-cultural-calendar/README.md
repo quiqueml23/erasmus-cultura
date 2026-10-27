@@ -38,3 +38,8 @@ La web permite:
 - consultar un catálogo de fuentes oficiales de Košice y alrededores en [activity_sources.json](activity_sources.json).
 
 Los eventos publicados viven en [events_data.json](events_data.json). El catálogo de fuentes está separado para poder añadir nuevos conectores sin mezclarlo con los eventos ya verificados. Una fuente catalogada no implica que sus eventos se hayan importado todavía: la aplicación muestra el enlace oficial hasta que exista un adaptador de datos fiable.
+
+
+## Adaptadores de fuentes
+
+El scraper mantiene adaptadores específicos para NDKE y ŠFK y un adaptador genérico para páginas que publican `schema.org/Event` en JSON-LD. Las fuentes con `scrape_mode: "jsonld"` se consultan desde `activity_sources.json`; si una página no expone eventos estructurados, se conserva como fuente enlazada y no se inventan eventos.
