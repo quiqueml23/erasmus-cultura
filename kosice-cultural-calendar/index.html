@@ -316,6 +316,7 @@
     const selectedKey = 'kosice-selected-events';
     const categoryKey = 'kosice-visible-categories';
     let allEvents = [];
+    let allSources = [];
     let selectedEvents = new Set(JSON.parse(localStorage.getItem(selectedKey) || '[]'));
 
     function escapeIcs(value) {
@@ -376,7 +377,7 @@
     }
 
     function renderFilters() {
-      const categories = [...new Set(allEvents.map(ev => ev.category))].sort();
+      const categories = [...new Set([...allEvents.map(ev => ev.category), ...allSources.map(source => source.category)])].sort();
       const stored = JSON.parse(localStorage.getItem(categoryKey) || 'null');
       const visible = new Set(stored || categories);
       const container = document.getElementById('category-filters');
@@ -392,6 +393,7 @@
           const selected = [...container.querySelectorAll('input:checked')].map(item => item.dataset.category);
           localStorage.setItem(categoryKey, JSON.stringify(selected));
           renderEvents();
+          renderSources();
         });
         label.append(input, document.createTextNode(category));
         container.appendChild(label);
@@ -451,17 +453,11 @@
       summary.textContent = selectedEvents.size + ' eventos seleccionados para exportar · ' + visibleCount + ' categorías visibles';
     }
 
-    document.getElementById('btn-export-selected').addEventListener('click', downloadSelection);
-
-    Promise.all([
-      fetch('events_data.json').then(res => res.json()),
-      fetch('activity_sources.json').then(res => res.json())
-    ]).then(([events, sources]) => {
-      allEvents = events;
-      renderFilters();
-      renderEvents();
+    function renderSources() {
+      const visible = new Set([...document.querySelectorAll('#category-filters input:checked')].map(input => input.dataset.category));
       const sourcesContainer = document.getElementById('sources-container');
-      sources.forEach(source => {
+      sourcesContainer.replaceChildren();
+      allSources.filter(source => visible.has(source.category)).forEach(source => {
         const item = document.createElement('div');
         item.className = 'source-item';
         const link = document.createElement('a');
@@ -475,6 +471,19 @@
         item.append(link, desc);
         sourcesContainer.appendChild(item);
       });
+    }
+
+    document.getElementById('btn-export-selected').addEventListener('click', downloadSelection);
+
+    Promise.all([
+      fetch('events_data.json').then(res => res.json()),
+      fetch('activity_sources.json').then(res => res.json())
+    ]).then(([events, sources]) => {
+      allEvents = events;
+      allSources = sources;
+      renderFilters();
+      renderEvents();
+      renderSources();
     }).catch(err => {
       console.log('No se pudo cargar el catálogo cultural:', err);
     });
