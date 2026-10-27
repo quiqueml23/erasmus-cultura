@@ -334,6 +334,71 @@ def scrape_zoo_kosice(session: requests.Session, source: dict) -> list:
     logging.info("Zoo Košice: %d eventos importados", len(events))
     return events
 
+
+def scrape_cinemax_kosice(session: requests.Session, source: dict) -> list:
+    """Extrae las sesiones diarias de CINEMAX Košice Optima desde su agenda oficial."""
+    base_url = source.get("feed_url") or source.get("url")
+    events = []
+    try:
+        response = session.get(base_url, headers=HEADERS, timeout=15)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        day_node = soup.select_one("a.date-btn[data-date-full]")
+        date_text = day_node.get("data-date-full", "") if day_node else ""
+        date_match = re.match(r"(\d{1,2})\.(\d{1,2})\.(\d{4})", date_text)
+        if not date_match:
+            logging.warning("CINEMAX: no se encontró la fecha de la cartelera")
+            return events
+        day, month, year = map(int, date_match.groups())
+        for row in soup.select(".row.row1"):
+            title_node = row.select_one(".col2 .h1 a, .col2 .h1")
+            if not title_node:
+                continue
+            title = title_node.get_text(" ", strip=True)
+            if not title:
+                continue
+            event_url = title_node.get("href") or source.get("url") or base_url
+            event_url = requests.compat.urljoin(base_url, event_url)
+            duration = 2.0
+            length_node = row.select_one(".info-bar li:first-child + li")
+            if length_node:
+                length_match = re.search(r"(\d+)\s*min", length_node.get_text(" ", strip=True), re.I)
+                if length_match:
+                    duration = max(0.25, int(length_match.group(1)) / 60)
+            for show in row.select(".time-list .time-index-0"):
+                time_node = show.select_one(".time")
+                if not time_node:
+                    continue
+                time_match = re.search(r"(\d{1,2}):(\d{2})", time_node.get_text(" ", strip=True))
+                if not time_match:
+                    continue
+                hour, minute = map(int, time_match.groups())
+                start = datetime(year, month, day, hour, minute)
+                booking = show.select_one("a[href]")
+                ticket_url = requests.compat.urljoin(base_url, booking.get("href")) if booking else event_url
+                slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:40]
+                events.append({
+                    "id": f"cinemax-kosice-{start:%Y%m%d-%H%M}-{slug}",
+                    "title_sk": title,
+                    "category": "Cine",
+                    "venue": "CINEMAX Košice Optima",
+                    "address": "Moldavská cesta 32, 040 11 Košice",
+                    "start": start.isoformat(),
+                    "duration_hours": duration,
+                    "description": "Sesión de cine en CINEMAX Košice Optima.",
+                    "ticket_url": ticket_url,
+                    "event_url": event_url,
+                    "price_info": "Consultar tarifa y descuentos en la compra",
+                    "price_source_url": ticket_url,
+                    "institution": "CINEMAX Košice Optima",
+                    "source_id": source["id"]
+                })
+    except requests.RequestException as error:
+        logging.warning("No se pudo consultar CINEMAX Košice: %s", error)
+    logging.info("CINEMAX Košice: %d sesiones importadas", len(events))
+    return events
+
+
 def scrape_jsonld_source(session: requests.Session, source: dict) -> list:
     """Importa eventos publicados con schema.org/Event desde una agenda oficial."""
     public_url = source.get("url")
@@ -443,6 +508,8 @@ def main():
             new_events.extend(scrape_kino_usmev(session, source))
         elif source.get("id") == "zoo-kosice":
             new_events.extend(scrape_zoo_kosice(session, source))
+        elif source.get("id") == "cinemax-kosice":
+            new_events.extend(scrape_cinemax_kosice(session, source))
         elif source.get("id") not in {"ndke", "sfk"}:
             new_events.extend(scrape_jsonld_source(session, source))
 
