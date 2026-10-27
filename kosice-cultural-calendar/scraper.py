@@ -286,6 +286,54 @@ def scrape_kino_usmev(session: requests.Session, source: dict) -> list:
     logging.info("Kino Úsmev: %d eventos importados", len(events))
     return events
 
+def scrape_zoo_kosice(session: requests.Session, source: dict) -> list:
+    """Extrae eventos con fecha publicada en los bloques de Elementor de la ZOO."""
+    source_url = source.get("feed_url") or source.get("url")
+    months = {
+        "január": 1, "február": 2, "marec": 3, "apríl": 4, "máj": 5,
+        "jún": 6, "júl": 7, "august": 8, "september": 9, "október": 10,
+        "november": 11, "december": 12
+    }
+    events = []
+    try:
+        response = session.get(source_url, headers=HEADERS, timeout=15)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        for title_node in soup.select('h5 a[href*="/udalosti/"]'):
+            title = title_node.get_text(" ", strip=True)
+            if not title:
+                continue
+            column = title_node.find_parent(class_=re.compile(r"elementor-column"))
+            context = column.get_text(" ", strip=True) if column else title
+            date_match = re.search(r"(\d{1,2})\.\s*(?:-\s*\d{1,2}\.\s*)?([a-záäčďéíĺľňóôŕšťúýž]+)\s*(\d{4})", context, re.I)
+            if not date_match:
+                continue
+            day, month_name, year = int(date_match.group(1)), date_match.group(2).lower(), int(date_match.group(3))
+            month = months.get(month_name)
+            if not month:
+                continue
+            event_url = title_node.get("href") or source.get("url")
+            events.append({
+                "id": f"zoo-kosice-{year:04d}{month:02d}{day:02d}-{re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')[:40]}",
+                "title_sk": title,
+                "category": "Zoo y naturaleza",
+                "venue": "Zoo Košice",
+                "address": "Ulica k Zoologickej záhrade 1, 040 01 Košice – Kavečany",
+                "start": datetime(year, month, day, 9, 0).isoformat(),
+                "duration_hours": 8.0,
+                "description": context,
+                "ticket_url": event_url,
+                "event_url": event_url,
+                "price_info": "Consultar ficha oficial",
+                "price_source_url": event_url,
+                "institution": "Zoo Košice",
+                "source_id": source["id"]
+            })
+    except requests.RequestException as error:
+        logging.warning("No se pudo consultar Zoo Košice: %s", error)
+    logging.info("Zoo Košice: %d eventos importados", len(events))
+    return events
+
 def scrape_jsonld_source(session: requests.Session, source: dict) -> list:
     """Importa eventos publicados con schema.org/Event desde una agenda oficial."""
     public_url = source.get("url")
@@ -393,6 +441,8 @@ def main():
     for source in sources:
         if source.get("id") == "kino-usmev":
             new_events.extend(scrape_kino_usmev(session, source))
+        elif source.get("id") == "zoo-kosice":
+            new_events.extend(scrape_zoo_kosice(session, source))
         elif source.get("id") not in {"ndke", "sfk"}:
             new_events.extend(scrape_jsonld_source(session, source))
 
