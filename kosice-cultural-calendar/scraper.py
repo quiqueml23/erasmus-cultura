@@ -112,6 +112,10 @@ def scrape_sdke(session: requests.Session) -> list:
                     "duration_hours": 2.5 if category in ["Ópera", "Ballet"] else 2.0,
                     "description": f"Función oficial de {category.lower()} en el Národné divadlo Košice.",
                     "ticket_url": ticket_url,
+                    "event_url": ticket_url,
+                    "price_info": "Consultar ficha oficial",
+                    "price_source_url": "https://www.sdke.sk/sk/cenniky",
+                    "source_id": "ndke",
                     "institution": "Národné divadlo Košice"
                 })
 
@@ -176,6 +180,10 @@ def scrape_sfk(session: requests.Session) -> list:
                     "duration_hours": 2.0,
                     "description": f"Concierto sinfónico / de cámara de la Štátna filharmónia Košice.",
                     "ticket_url": ticket_url,
+                    "event_url": ticket_url,
+                    "price_info": "Consultar ficha oficial",
+                    "price_source_url": ticket_url,
+                    "source_id": "sfk",
                     "institution": "Štátna filharmónia Košice"
                 })
 
