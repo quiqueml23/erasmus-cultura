@@ -43,3 +43,5 @@ Los eventos publicados viven en [events_data.json](events_data.json). El catálo
 ## Adaptadores de fuentes
 
 El scraper mantiene adaptadores específicos para NDKE y ŠFK y un adaptador genérico para páginas que publican `schema.org/Event` en JSON-LD. Las fuentes con `scrape_mode: "jsonld"` se consultan desde `activity_sources.json`; si una página no expone eventos estructurados, se conserva como fuente enlazada y no se inventan eventos.
+
+Las fuentes pueden definir `feed_url` cuando su agenda está en una ruta distinta de la página pública. Por ejemplo, Kino Úsmev se consulta desde `/program/`, mientras que el enlace mostrado al usuario sigue siendo su portada.
