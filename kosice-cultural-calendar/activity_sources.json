@@ -8,7 +8,8 @@
     "url": "https://www.kinousmev.sk/",
     "source_type": "Agenda oficial",
     "scrape_mode": "jsonld",
-    "last_checked": null
+    "last_checked": null,
+    "feed_url": "https://kinousmev.sk/program/"
   },
   {
     "id": "kino-druzba",
@@ -19,7 +20,8 @@
     "url": "https://www.kino-druzba.sk/",
     "source_type": "Agenda oficial",
     "scrape_mode": "jsonld",
-    "last_checked": null
+    "last_checked": null,
+    "feed_url": "https://www.kino-druzba.sk/program/"
   },
   {
     "id": "zoo-kosice",
@@ -30,7 +32,8 @@
     "url": "https://www.zookosice.sk/",
     "source_type": "Agenda oficial",
     "scrape_mode": "jsonld",
-    "last_checked": null
+    "last_checked": null,
+    "feed_url": "https://zookosice.sk/"
   },
   {
     "id": "vychodoslovenske-muzeum",
