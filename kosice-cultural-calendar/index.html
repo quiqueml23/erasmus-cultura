@@ -156,6 +156,25 @@
       font-size: 0.85rem;
       color: var(--text-muted);
     }
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px;
+    }
+    .filter-option, .calendar-option {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+    }
+    .filter-option input, .calendar-option input { margin-top: 5px; }
+    .source-item {
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .source-item a { font-weight: 700; color: var(--accent); }
     footer {
       text-align: center;
       font-size: 0.85rem;
@@ -178,8 +197,11 @@
         📲 Añadir a mi calendario
       </a>
       <a class="secondary-button" href="kosice_cultura.ics" download>
-        📥 Descargar .ics (otros calendarios)
+        📥 Descargar calendario completo (.ics)
       </a>
+      <button id="btn-export-selected" class="secondary-button" type="button">
+        📤 Exportar selección al calendario
+      </button>
 
       <div class="qr-box">
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
@@ -238,11 +260,24 @@
       </div>
     </div>
 
+    <div class="card" id="preferences-card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 12px;">⚙️ Personaliza tu calendario</h2>
+      <p class="event-meta" style="margin-bottom: 12px;">Elige qué categorías quieres ver y qué eventos quieres enviar a tu calendario. La selección se guarda en este dispositivo.</p>
+      <div id="category-filters" class="filter-grid"></div>
+      <p id="selection-summary" class="event-meta" style="margin-top: 12px;"></p>
+    </div>
+
     <div class="card events-preview">
       <h2 style="font-size: 1.25rem; margin-bottom: 14px;">Próximas funciones confirmadas</h2>
       <div id="events-container">
         <!-- Renderizado dinámico desde events_data.json -->
       </div>
+    </div>
+
+    <div class="card events-preview">
+      <h2 style="font-size: 1.25rem; margin-bottom: 14px;">📍 Fuentes culturales cercanas</h2>
+      <p class="event-meta" style="margin-bottom: 14px;">Estas agendas se irán incorporando al buscador conforme se conecten sus fuentes públicas.</p>
+      <div id="sources-container"></div>
     </div>
 
     <footer>
@@ -278,50 +313,171 @@
     const qrImg = document.getElementById('qr-img');
     qrImg.src = `https://quickchart.io/qr?text=${encodeURIComponent(recommendedUrl)}&size=200&ecLevel=M`;
 
-    // Cargar y mostrar los primeros eventos
-    fetch('events_data.json')
-      .then(res => res.json())
-      .then(events => {
-        const container = document.getElementById('events-container');
-        events.slice(0, 8).forEach(ev => {
-          const div = document.createElement('div');
-          div.className = 'event-item';
-          const dt = new Date(ev.start);
-          const dateStr = dt.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    const selectedKey = 'kosice-selected-events';
+    const categoryKey = 'kosice-visible-categories';
+    let allEvents = [];
+    let selectedEvents = new Set(JSON.parse(localStorage.getItem(selectedKey) || '[]'));
 
-          const tag = document.createElement('div');
-          tag.className = 'event-tag';
-          tag.textContent = `${ev.category} · ${ev.institution}`;
+    function escapeIcs(value) {
+      return String(value || '').replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+    }
 
-          const title = document.createElement('a');
-          title.className = 'event-title';
-          title.href = ev.event_url || ev.ticket_url || '#';
-          title.target = '_blank';
-          title.rel = 'noopener noreferrer';
-          title.textContent = ev.title_sk;
+    function toIcsDate(value) {
+      const date = new Date(value);
+      const pad = number => String(number).padStart(2, '0');
+      return date.getUTCFullYear() + pad(date.getUTCMonth() + 1) + pad(date.getUTCDate()) + 'T' + pad(date.getUTCHours()) + pad(date.getUTCMinutes()) + pad(date.getUTCSeconds()) + 'Z';
+    }
 
-          const meta = document.createElement('div');
-          meta.className = 'event-meta';
-          meta.textContent = `📅 ${dateStr} · 📍 ${ev.venue}`;
+    function eventToIcs(ev) {
+      const start = toIcsDate(ev.start);
+      const end = toIcsDate(new Date(new Date(ev.start).getTime() + (ev.duration_hours || 2) * 3600000));
+      const url = ev.event_url || ev.ticket_url || '';
+      const description = [
+        'Tipo de evento: ' + (ev.category || 'Cultura'),
+        'Institución: ' + (ev.institution || ''),
+        'Recinto: ' + (ev.venue || '') + ', ' + (ev.address || ''),
+        'Precio: ' + (ev.price_info || 'Consultar ficha oficial'),
+        'Sinopsis: ' + (ev.description || ''),
+        'Evento y entradas: ' + url
+      ].join('\\n');
+      return [
+        'BEGIN:VEVENT',
+        'UID:' + escapeIcs(ev.id) + '@kosice-cultura',
+        'DTSTAMP:' + toIcsDate(new Date()),
+        'DTSTART:' + start,
+        'DTEND:' + end,
+        'SUMMARY:' + escapeIcs('[' + (ev.category || 'Cultura') + '] ' + ev.title_sk),
+        'LOCATION:' + escapeIcs((ev.venue || '') + ', ' + (ev.address || '')),
+        'DESCRIPTION:' + escapeIcs(description),
+        url ? 'URL:' + url : '',
+        'STATUS:CONFIRMED',
+        'BEGIN:VALARM',
+        'ACTION:DISPLAY',
+        'DESCRIPTION:' + escapeIcs('Aviso (1 semana antes): ' + ev.title_sk),
+        'TRIGGER:-P7D',
+        'END:VALARM',
+        'END:VEVENT'
+      ].filter(Boolean).join('\\r\\n');
+    }
 
-          const price = document.createElement('div');
-          price.className = 'event-meta';
-          price.textContent = `🎟️ Precio: ${ev.price_info || 'Consultar ficha oficial'}`;
+    function downloadSelection() {
+      const chosen = allEvents.filter(ev => selectedEvents.has(ev.id));
+      if (!chosen.length) {
+        alert('Selecciona al menos un evento para exportarlo.');
+        return;
+      }
+      const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cultura Kosice//Calendario configurable//ES','CALSCALE:GREGORIAN','X-WR-CALNAME:Cultura Košice - Mi selección',...chosen.map(eventToIcs),'END:VCALENDAR'].join('\\r\\n') + '\\r\\n';
+      const blob = new Blob([ics], {type: 'text/calendar;charset=utf-8'});
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'kosice_cultura_seleccion.ics';
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
 
-          const link = document.createElement('a');
-          link.href = ev.event_url || ev.ticket_url || '#';
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.textContent = 'Ver evento oficial';
-          link.className = 'event-meta';
-
-          div.append(tag, title, meta, price, link);
-          container.appendChild(div);
+    function renderFilters() {
+      const categories = [...new Set(allEvents.map(ev => ev.category))].sort();
+      const stored = JSON.parse(localStorage.getItem(categoryKey) || 'null');
+      const visible = new Set(stored || categories);
+      const container = document.getElementById('category-filters');
+      container.replaceChildren();
+      categories.forEach(category => {
+        const label = document.createElement('label');
+        label.className = 'filter-option';
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.checked = visible.has(category);
+        input.dataset.category = category;
+        input.addEventListener('change', () => {
+          const selected = [...container.querySelectorAll('input:checked')].map(item => item.dataset.category);
+          localStorage.setItem(categoryKey, JSON.stringify(selected));
+          renderEvents();
         });
-      })
-      .catch(err => {
-        console.log('No se pudo cargar preview de eventos en modo local:', err);
+        label.append(input, document.createTextNode(category));
+        container.appendChild(label);
       });
+    }
+
+    function renderEvents() {
+      const container = document.getElementById('events-container');
+      const visible = new Set([...document.querySelectorAll('#category-filters input:checked')].map(input => input.dataset.category));
+      container.replaceChildren();
+      allEvents.filter(ev => visible.has(ev.category)).slice(0, 24).forEach(ev => {
+        const div = document.createElement('div');
+        div.className = 'event-item';
+        const dt = new Date(ev.start);
+        const dateStr = dt.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+        const choose = document.createElement('label');
+        choose.className = 'calendar-option';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = selectedEvents.has(ev.id);
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) selectedEvents.add(ev.id); else selectedEvents.delete(ev.id);
+          localStorage.setItem(selectedKey, JSON.stringify([...selectedEvents]));
+          updateSummary();
+        });
+        choose.append(checkbox, document.createTextNode('Añadir al calendario'));
+        const tag = document.createElement('div');
+        tag.className = 'event-tag';
+        tag.textContent = ev.category + ' · ' + ev.institution;
+        const title = document.createElement('a');
+        title.className = 'event-title';
+        title.href = ev.event_url || ev.ticket_url || '#';
+        title.target = '_blank';
+        title.rel = 'noopener noreferrer';
+        title.textContent = ev.title_sk;
+        const meta = document.createElement('div');
+        meta.className = 'event-meta';
+        meta.textContent = '📅 ' + dateStr + ' · 📍 ' + ev.venue;
+        const price = document.createElement('div');
+        price.className = 'event-meta';
+        price.textContent = '🎟️ Precio: ' + (ev.price_info || 'Consultar ficha oficial');
+        const link = document.createElement('a');
+        link.href = ev.event_url || ev.ticket_url || '#';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Ver evento oficial';
+        link.className = 'event-meta';
+        div.append(choose, tag, title, meta, price, link);
+        container.appendChild(div);
+      });
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const summary = document.getElementById('selection-summary');
+      const visibleCount = document.querySelectorAll('#category-filters input:checked').length;
+      summary.textContent = selectedEvents.size + ' eventos seleccionados para exportar · ' + visibleCount + ' categorías visibles';
+    }
+
+    document.getElementById('btn-export-selected').addEventListener('click', downloadSelection);
+
+    Promise.all([
+      fetch('events_data.json').then(res => res.json()),
+      fetch('activity_sources.json').then(res => res.json())
+    ]).then(([events, sources]) => {
+      allEvents = events;
+      renderFilters();
+      renderEvents();
+      const sourcesContainer = document.getElementById('sources-container');
+      sources.forEach(source => {
+        const item = document.createElement('div');
+        item.className = 'source-item';
+        const link = document.createElement('a');
+        link.href = source.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = source.name;
+        const desc = document.createElement('div');
+        desc.className = 'event-meta';
+        desc.textContent = source.category + ' · ' + source.area + ' · ' + source.description;
+        item.append(link, desc);
+        sourcesContainer.appendChild(item);
+      });
+    }).catch(err => {
+      console.log('No se pudo cargar el catálogo cultural:', err);
+    });
   </script>
 </body>
 </html>
