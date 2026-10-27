@@ -231,6 +231,61 @@ def _jsonld_location(value):
     return str(value or "Košice"), "Košice"
 
 
+def scrape_kino_usmev(session: requests.Session, source: dict) -> list:
+    """Extrae proyecciones y actividades de los bloques tt-event-list-item."""
+    source_url = source.get("feed_url") or source.get("url")
+    events = []
+    try:
+        response = session.get(source_url, headers=HEADERS, timeout=15)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        today = datetime.now(TZ)
+        for node in soup.select(".tt-event-list-item"):
+            title_node = node.select_one(".event-info .name a")
+            if not title_node:
+                continue
+            title = title_node.get_text(" ", strip=True)
+            event_url = title_node.get("href") or source.get("url")
+            if event_url.startswith("/"):
+                event_url = f"https://kinousmev.sk{event_url}"
+            director = node.select_one(".MovieDirector")
+            length = node.select_one(".MovieLength")
+            duration = 2.0
+            if length:
+                match = re.search(r"(\d+)\s*min", length.get_text(" ", strip=True))
+                if match:
+                    duration = max(0.5, int(match.group(1)) / 60)
+            for date_node in node.select(".date-action"):
+                date_text = date_node.get_text(" ", strip=True)
+                match = re.search(r"(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{1,2}:\d{2})", date_text)
+                if not match:
+                    continue
+                day, month = int(match.group(1)), int(match.group(2))
+                hour, minute = map(int, match.group(3).split(":"))
+                year = today.year + (1 if month < today.month - 1 else 0)
+                start = datetime(year, month, day, hour, minute)
+                ticket_url = date_node.get("href") or event_url
+                events.append({
+                    "id": f"kino-usmev-{start:%Y%m%d-%H%M}-{re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')[:32]}",
+                    "title_sk": title,
+                    "category": "Cine",
+                    "venue": "Kino Úsmev",
+                    "address": "Kasárenské nám. 1, 040 01 Košice",
+                    "start": start.isoformat(),
+                    "duration_hours": duration,
+                    "description": director.get_text(" ", strip=True) if director else "Proyección o actividad del Kino Úsmev.",
+                    "ticket_url": ticket_url,
+                    "event_url": event_url,
+                    "price_info": "Consultar ficha oficial",
+                    "price_source_url": event_url,
+                    "institution": "Kino Úsmev",
+                    "source_id": source["id"]
+                })
+    except requests.RequestException as error:
+        logging.warning("No se pudo consultar Kino Úsmev: %s", error)
+    logging.info("Kino Úsmev: %d eventos importados", len(events))
+    return events
+
 def scrape_jsonld_source(session: requests.Session, source: dict) -> list:
     """Importa eventos publicados con schema.org/Event desde una agenda oficial."""
     public_url = source.get("url")
@@ -336,7 +391,9 @@ def main():
         logging.warning("No se pudo leer el catálogo de fuentes: %s", error)
         sources = []
     for source in sources:
-        if source.get("id") not in {"ndke", "sfk"}:
+        if source.get("id") == "kino-usmev":
+            new_events.extend(scrape_kino_usmev(session, source))
+        elif source.get("id") not in {"ndke", "sfk"}:
             new_events.extend(scrape_jsonld_source(session, source))
 
     if new_events:
