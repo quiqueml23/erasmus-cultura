@@ -233,7 +233,8 @@ def _jsonld_location(value):
 
 def scrape_jsonld_source(session: requests.Session, source: dict) -> list:
     """Importa eventos publicados con schema.org/Event desde una agenda oficial."""
-    source_url = source.get("url")
+    public_url = source.get("url")
+    source_url = source.get("feed_url") or public_url
     if not source_url or source.get("scrape_mode") != "jsonld":
         return []
     events = []
@@ -261,7 +262,7 @@ def scrape_jsonld_source(session: requests.Session, source: dict) -> list:
                 price = offers.get("price") if isinstance(offers, dict) else None
                 currency = offers.get("priceCurrency", "EUR") if isinstance(offers, dict) else "EUR"
                 price_info = f"{price} {currency}" if price not in (None, "") else "Consultar ficha oficial"
-                event_url = raw.get("url") or source_url
+                event_url = raw.get("url") or public_url or source_url
                 events.append({
                     "id": event_id,
                     "title_sk": title,
