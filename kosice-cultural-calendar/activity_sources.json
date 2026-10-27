@@ -26,6 +26,18 @@
     "adapter": "zoo_kosice"
   },
   {
+    "id": "cinemax-kosice",
+    "name": "CINEMAX Košice Optima",
+    "category": "Cine",
+    "area": "Košice",
+    "description": "Cartelera de estrenos y sesiones en OC Optima.",
+    "url": "https://www.cine-max.sk/filmy/program",
+    "feed_url": "https://www.cine-max.sk/filmy/program",
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
+  },
+  {
     "id": "vychodoslovenske-muzeum",
     "name": "Východoslovenské múzeum",
     "category": "Museos",
