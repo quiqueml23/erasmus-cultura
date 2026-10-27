@@ -469,7 +469,7 @@
         link.textContent = source.name;
         const desc = document.createElement('div');
         desc.className = 'event-meta';
-        desc.textContent = source.category + ' · ' + source.area + ' · ' + source.description + (source.scrape_mode === 'jsonld' ? ' · Importación automática preparada' : '');
+        desc.textContent = source.category + ' · ' + source.area + ' · ' + source.description + ((source.scrape_mode === 'jsonld' || source.adapter) ? ' · Importación automática preparada' : '');
         item.append(link, desc);
         sourcesContainer.appendChild(item);
       });
