@@ -183,7 +183,7 @@
 
       <div class="qr-box">
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
-          Escanea el QR para abrir la opción recomendada en este dispositivo:
+          Escanea el QR para abrir la opción recomendada. En Google Calendar, pega la dirección del feed que aparece debajo:
         </p>
         <img id="qr-img" src="" alt="Código QR de suscripción">
         <p id="cal-url-display" style="font-size: 0.75rem; word-break: break-all; color: #64748b;"></p>
@@ -230,11 +230,11 @@
       <h2 style="font-size: 1.25rem; margin-bottom: 12px;">📖 Cómo añadir el calendario</h2>
       <ol>
         <li><strong>iPhone, iPad o Mac:</strong> toca el botón para abrir Apple Calendar y confirma la suscripción.</li>
-        <li><strong>Android:</strong> toca el botón para abrir Google Calendar, inicia sesión si hace falta y añade el calendario. Después aparecerá en la app Google Calendar del teléfono.</li>
+        <li><strong>Google Calendar:</strong> toca el botón y, en la pantalla «Añadir por URL», pega la dirección del calendario que aparece arriba. En Android, abre esta página en Chrome y activa «Sitio para ordenadores»; Google no permite suscribirse a calendarios por URL desde su app móvil.</li>
         <li><strong>Otros calendarios:</strong> descarga el archivo .ics e impórtalo en tu aplicación.</li>
       </ol>
       <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted);">
-        La suscripción de Google Calendar se añade desde la web y puede tardar en sincronizarse con Android. Las importaciones .ics son una copia puntual; para recibir futuras actualizaciones, usa una suscripción.
+        La suscripción por URL se configura desde Google Calendar en la web y puede tardar en sincronizarse con Android. Las importaciones .ics son una copia puntual; usa «Añadir por URL» para recibir futuras actualizaciones.
       </div>
     </div>
 
@@ -261,13 +261,15 @@
     // iOS/macOS abre la suscripción nativa; Android y escritorio usan Google Calendar.
     const btn = document.getElementById('btn-subscribe');
     const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
-    const googleCalendarUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(icsAbsoluteUrl)}`;
+    // Google Calendar no acepta aquí la URL del feed como parámetro cid.
+    // Su pantalla "Añadir por URL" permite suscribirse pegando el feed .ics.
+    const googleCalendarUrl = 'https://calendar.google.com/calendar/u/0/r/settings/addbyurl';
     const recommendedUrl = isApple ? webcalUrl : googleCalendarUrl;
 
     btn.href = recommendedUrl;
     btn.textContent = isApple
       ? '📲 Suscribirme en Apple Calendar'
-      : '📲 Añadir a Google Calendar';
+      : '📲 Abrir Google Calendar para suscribirme';
 
     const urlDisplay = document.getElementById('cal-url-display');
     urlDisplay.textContent = icsAbsoluteUrl;
