@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cultura Košice - Calendario para iPhone</title>
+  <title>Cultura Košice - Calendario cultural</title>
   <style>
     :root {
       --primary: #c2185b;
@@ -166,21 +166,21 @@
   <div class="container">
     <header>
       <div class="badge">Košice · Temporada 2026 / 2027</div>
-      <h1>Cultura Košice para iPhone</h1>
-      <p class="subtitle">Ópera, Ballet, Conciertos Sinfónicos y Teatro con avisos automáticos 1 semana antes.</p>
+      <h1>Calendario cultural de Košice</h1>
+      <p class="subtitle">Ópera, ballet, conciertos y teatro. Añádelo a tu calendario desde iPhone, Android o cualquier ordenador.</p>
     </header>
 
     <div class="card">
       <a id="btn-subscribe" class="cta-button" href="kosice_cultura.ics">
-        📲 Añadir al Calendario de mi iPhone
+        📲 Añadir a mi calendario
       </a>
       <a class="secondary-button" href="kosice_cultura.ics" download>
-        📥 Descargar archivo .ics directo
+        📥 Descargar .ics (otros calendarios)
       </a>
 
       <div class="qr-box">
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
-          O escanea este código QR con la cámara de tu iPhone:
+          Escanea el QR para abrir la opción recomendada en este dispositivo:
         </p>
         <img id="qr-img" src="" alt="Código QR de suscripción">
         <p id="cal-url-display" style="font-size: 0.75rem; word-break: break-all; color: #64748b;"></p>
@@ -224,14 +224,14 @@
     </div>
 
     <div class="card instructions">
-      <h2 style="font-size: 1.25rem; margin-bottom: 12px;">📖 Cómo añadirlo a tu iPhone paso a paso</h2>
+      <h2 style="font-size: 1.25rem; margin-bottom: 12px;">📖 Cómo añadir el calendario</h2>
       <ol>
-        <li><strong>Opción más rápida (1 toque):</strong> Toca el botón fucsia <em>"Añadir al Calendario de mi iPhone"</em> en Safari de tu móvil.</li>
-        <li>iOS te preguntará: <code>¿Quieres suscribirte al calendario "Cultura Košice"?</code></li>
-        <li>Pulsa <strong>"Suscribirse"</strong> y después <strong>"Añadir"</strong>. ¡Listo!</li>
+        <li><strong>iPhone, iPad o Mac:</strong> toca el botón para abrir Apple Calendar y confirma la suscripción.</li>
+        <li><strong>Android:</strong> toca el botón para abrir Google Calendar, inicia sesión si hace falta y añade el calendario. Después aparecerá en la app Google Calendar del teléfono.</li>
+        <li><strong>Otros calendarios:</strong> descarga el archivo .ics e impórtalo en tu aplicación.</li>
       </ol>
       <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted);">
-        <strong>¿Prefieres Google Calendar?</strong> En <a href="https://calendar.google.com" target="_blank">calendar.google.com</a> pulsa el <strong>"+"</strong> al lado de <em>Otros calendarios</em> &rarr; <em>Desde URL</em> y pega el enlace de este calendario. Al tener tu cuenta de Google sincronizada con tu iPhone, aparecerá de inmediato.
+        La suscripción de Google Calendar se añade desde la web y puede tardar en sincronizarse con Android. Las importaciones .ics son una copia puntual; para recibir futuras actualizaciones, usa una suscripción.
       </div>
     </div>
 
@@ -255,16 +255,23 @@
     const icsAbsoluteUrl = `${currentOrigin}${currentPath}kosice_cultura.ics`;
     const webcalUrl = icsAbsoluteUrl.replace(/^https?:/, 'webcal:');
 
-    // Configurar enlace del botón principal para iPhone
+    // iOS/macOS abre la suscripción nativa; Android y escritorio usan Google Calendar.
     const btn = document.getElementById('btn-subscribe');
-    btn.href = webcalUrl;
+    const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
+    const googleCalendarUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(icsAbsoluteUrl)}`;
+    const recommendedUrl = isApple ? webcalUrl : googleCalendarUrl;
+
+    btn.href = recommendedUrl;
+    btn.textContent = isApple
+      ? '📲 Suscribirme en Apple Calendar'
+      : '📲 Añadir a Google Calendar';
 
     const urlDisplay = document.getElementById('cal-url-display');
     urlDisplay.textContent = icsAbsoluteUrl;
 
-    // Generar código QR usando la API pública de QuickChart
+    // El QR lleva al mismo flujo recomendado que el botón.
     const qrImg = document.getElementById('qr-img');
-    qrImg.src = `https://quickchart.io/qr?text=${encodeURIComponent(webcalUrl)}&size=200&ecLevel=M`;
+    qrImg.src = `https://quickchart.io/qr?text=${encodeURIComponent(recommendedUrl)}&size=200&ecLevel=M`;
 
     // Cargar y mostrar los primeros eventos
     fetch('events_data.json')
