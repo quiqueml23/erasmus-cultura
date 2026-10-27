@@ -329,6 +329,8 @@
       return date.getUTCFullYear() + pad(date.getUTCMonth() + 1) + pad(date.getUTCDate()) + 'T' + pad(date.getUTCHours()) + pad(date.getUTCMinutes()) + pad(date.getUTCSeconds()) + 'Z';
     }
 
+    const CRLF = String.fromCharCode(13, 10);
+
     function eventToIcs(ev) {
       const start = toIcsDate(ev.start);
       const end = toIcsDate(new Date(new Date(ev.start).getTime() + (ev.duration_hours || 2) * 3600000));
