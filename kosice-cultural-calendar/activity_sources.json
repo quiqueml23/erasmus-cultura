@@ -7,9 +7,10 @@
     "description": "Cine independiente, ciclos y proyecciones especiales.",
     "url": "https://www.kinousmev.sk/",
     "source_type": "Agenda oficial",
-    "scrape_mode": "jsonld",
+    "scrape_mode": "html",
     "last_checked": null,
-    "feed_url": "https://kinousmev.sk/program/"
+    "feed_url": "https://kinousmev.sk/program/",
+    "adapter": "kino_usmev"
   },
   {
     "id": "kino-druzba",
@@ -31,9 +32,10 @@
     "description": "Visitas, actividades educativas y eventos familiares.",
     "url": "https://www.zookosice.sk/",
     "source_type": "Agenda oficial",
-    "scrape_mode": "jsonld",
+    "scrape_mode": "html",
     "last_checked": null,
-    "feed_url": "https://zookosice.sk/"
+    "feed_url": "https://zookosice.sk/",
+    "adapter": "zoo_kosice"
   },
   {
     "id": "vychodoslovenske-muzeum",
