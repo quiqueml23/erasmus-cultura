@@ -94,13 +94,17 @@ def build_event(item: dict) -> Event:
         f"ℹ️ Sinopsis / Programa:",
         f"{item.get('description', '')}",
         "",
-        f"🎟️ Entradas e información oficial:",
-        f"{item.get('ticket_url', 'https://www.sdke.sk')}"
+        f"💶 Precio: {item.get('price_info', 'Consultar ficha oficial')}",
+        f"ℹ️ Fuente del precio: {item.get('price_source_url', item.get('event_url', item.get('ticket_url', '')))}",
+        "",
+        "🎟️ Evento y entradas:",
+        f"{item.get('event_url', item.get('ticket_url', 'https://www.sdke.sk'))}"
     ]
     ev.add('description', "\n".join(description_lines))
 
-    if 'ticket_url' in item:
-        ev.add('url', item['ticket_url'])
+    event_url = item.get('event_url') or item.get('ticket_url')
+    if event_url:
+        ev.add('url', event_url)
 
     # Alarma requerida por el usuario: exactamente 1 semana antes (-P7D)
     alarm = Alarm()
