@@ -233,10 +233,10 @@
     "start": "2026-12-01T19:00:00",
     "duration_hours": 2.5,
     "description": "Función de apertura de diciembre de la popular ópera dramática de Verdi.",
-    "ticket_url": "https://www.sdke.sk/",
+    "ticket_url": "https://www.sdke.sk/sk/node/2049",
     "institution": "Národné divadlo Košice",
-    "event_url": "https://www.sdke.sk/",
-    "price_info": "Precio no localizado; consultar ficha oficial",
+    "event_url": "https://www.sdke.sk/sk/node/2049",
+    "price_info": "5–28 € (según zona)",
     "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
@@ -293,10 +293,10 @@
     "start": "2026-12-12T19:00:00",
     "duration_hours": 2,
     "description": "Función navideña de El Cascanueces en la sala histórica del Teatro Nacional de Košice.",
-    "ticket_url": "https://www.sdke.sk/",
+    "ticket_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
     "institution": "Národné divadlo Košice",
-    "event_url": "https://www.sdke.sk/",
-    "price_info": "Precio no localizado; consultar ficha oficial",
+    "event_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
+    "price_info": "5–28 € (según zona)",
     "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
@@ -308,10 +308,10 @@
     "start": "2026-12-28T19:00:00",
     "duration_hours": 2.5,
     "description": "Gala especial de fin de año de La Traviata.",
-    "ticket_url": "https://www.sdke.sk/",
+    "ticket_url": "https://www.sdke.sk/sk/node/2049",
     "institution": "Národné divadlo Košice",
-    "event_url": "https://www.sdke.sk/",
-    "price_info": "Precio no localizado; consultar ficha oficial",
+    "event_url": "https://www.sdke.sk/sk/node/2049",
+    "price_info": "5–28 € (según zona)",
     "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
@@ -323,10 +323,10 @@
     "start": "2026-12-29T19:00:00",
     "duration_hours": 2,
     "description": "Función especial de fin de año del ballet El Cascanueces.",
-    "ticket_url": "https://www.sdke.sk/",
+    "ticket_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
     "institution": "Národné divadlo Košice",
-    "event_url": "https://www.sdke.sk/",
-    "price_info": "Precio no localizado; consultar ficha oficial",
+    "event_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
+    "price_info": "5–28 € (según zona)",
     "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
