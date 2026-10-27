@@ -108,5 +108,27 @@
     "source_type": "Agenda oficial",
     "scrape_mode": "jsonld",
     "last_checked": null
+  },
+  {
+    "id": "spisska-nova-ves-events",
+    "name": "Mesto Spišská Nová Ves · Podujatia",
+    "category": "Cultura general",
+    "area": "Spišská Nová Ves y alrededores",
+    "description": "Agenda municipal con cine, teatro, conciertos, exposiciones, talleres y festivales.",
+    "url": "https://www.spisskanovaves.eu/podujatia",
+    "source_type": "Agenda municipal",
+    "scrape_mode": "jsonld",
+    "last_checked": null
+  },
+  {
+    "id": "presov-cultural-activities",
+    "name": "GoPrešov · Actividades culturales",
+    "category": "Cultura general",
+    "area": "Prešov y alrededores",
+    "description": "Directorio de museos, teatros, cines, galerías y actividades culturales de Prešov.",
+    "url": "https://www.gopresov.sk/co-robit/kulturne-aktivity/",
+    "source_type": "Directorio municipal",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   }
 ]
