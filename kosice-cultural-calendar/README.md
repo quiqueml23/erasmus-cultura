@@ -46,6 +46,6 @@ El scraper mantiene adaptadores específicos para NDKE y ŠFK y un adaptador gen
 
 Las fuentes pueden definir `feed_url` cuando su agenda está en una ruta distinta de la página pública. Por ejemplo, Kino Úsmev se consulta desde `/program/`, mientras que el enlace mostrado al usuario sigue siendo su portada.
 
-Los adaptadores HTML específicos actuales incluyen Kino Úsmev (películas y horas de cada sesión) y Zoo Košice (actividades con fechas publicadas). Ambos conservan la ficha oficial y dejan el precio como consulta pendiente cuando la fuente no publica una tarifa estructurada.
+Los adaptadores HTML específicos actuales incluyen Kino Úsmev (películas y horas de cada sesión), Zoo Košice (actividades con fechas publicadas) y CINEMAX Košice Optima (cartelera diaria, duración, enlace de película y enlace de compra de cada sesión). Estos adaptadores conservan la ficha oficial y dejan el precio como consulta pendiente cuando la fuente no publica una tarifa estructurada.
 
 El catálogo evita fuentes ambiguas: se eliminó la antigua entrada de Kino Družba porque enlazaba a una agenda de Trenčín. Se añadió CINEMAX Košice Optima usando la página oficial de programación y su dirección oficial de Moldavská cesta 32.
