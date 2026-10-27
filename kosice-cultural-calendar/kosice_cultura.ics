@@ -1,0 +1,567 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Cultura Kosice//Calendario Cultural iPhone//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-PUBLISHED-TTL:P1D
+X-WR-CALDESC:Eventos culturales de Košice: Národné divadlo Košice y Š
+ tátna filharmónia Košice.
+X-WR-CALNAME:Cultura Košice (Ópera\, Ballet\, Conciertos)
+X-WR-TIMEZONE:Europe/Bratislava
+BEGIN:VTIMEZONE
+TZID:Europe/Bratislava
+BEGIN:STANDARD
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+SUMMARY:[Ópera] Giuseppe Verdi: LA TRAVIATA
+DTSTART;TZID=Europe/Bratislava:20261103T190000
+DTEND;TZID=Europe/Bratislava:20261103T213000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261103-traviata@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ópera\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nUna de las óperas más célebre
+ s de Giuseppe Verdi. La trágica historia de amor entre Violetta Valéry y
+  Alfredo Germont en el París del siglo XIX.\n\n🎟️ Entradas e informa
+ ción oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ópera] Giuseppe Verdi: LA TRAVIATA
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Teatro] Martin Čičvák: NAVEKYAMEN (Stand-uP StanaP.)
+DTSTART;TZID=Europe/Bratislava:20261103T190000
+DTEND;TZID=Europe/Bratislava:20261103T203000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261103-navekyamen@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Teatro\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Malá scéna NDKE\, Hlavná 76\, 040 01 Koš
+ ice\n\nℹ️ Sinopsis / Programa:\nMonodrama y comedia teatral de Martin 
+ Čičvák protagonizada por Peter Cibula.\n\n🎟️ Entradas e informaci
+ ón oficial:\nhttps://www.sdke.sk/
+LOCATION:Malá scéna NDKE\, Hlavná 76\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Teatro] Martin Čičvák: NAVEKYAMEN 
+ (Stand-uP StanaP.)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Teatro] Ján Palárik: DOBRODRUŽSTVO PRI OBŽINKOCH
+DTSTART;TZID=Europe/Bratislava:20261104T190000
+DTEND;TZID=Europe/Bratislava:20261104T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261104-obzinky@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Teatro\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nClásica comedia de enredo eslov
+ aca sobre el amor\, las diferencias sociales y la identidad.\n\n🎟️ En
+ tradas e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Teatro] Ján Palárik: DOBRODRUŽSTVO
+  PRI OBŽINKOCH
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] A cyklus: VTÁK OHNIVÁK (El pájaro de fuego)
+DTSTART;TZID=Europe/Bratislava:20261105T190000
+DTEND;TZID=Europe/Bratislava:20261105T210000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261105-vtak-ohnivak@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Dom umenia ŠFK\, Moyzesova 66\, 040 
+ 01 Košice\n\nℹ️ Sinopsis / Programa:\nConcierto sinfónico de la Št
+ átna filharmónia Košice. Director: Tomáš Brauner. Obras de Maurice Ra
+ vel y la famosa suite de 'El pájaro de fuego' de Ígor Stravinski.\n\n
+ 🎟️ Entradas e información oficial:\nhttps://www.sfk.sk/
+LOCATION:Dom umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] A cyklus: VTÁK OHNIVÁK (
+ El pájaro de fuego)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ballet] Shakespeare / Šoth / Mistríková: HAMLET
+DTSTART;TZID=Europe/Bratislava:20261106T190000
+DTEND;TZID=Europe/Bratislava:20261106T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261106-hamlet@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ballet\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nGran producción dramática de b
+ allet basada en la tragedia inmortal de William Shakespeare\, con coreogra
+ fía y dirección de Ondrej Šoth.\n\n🎟️ Entradas e información ofic
+ ial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ballet] Shakespeare / Šoth / Mistrí
+ ková: HAMLET
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ballet] Sergei Banevich: SNEHOVÁ KRÁĽOVNÁ (La reina de las ni
+ eves)
+DTSTART;TZID=Europe/Bratislava:20261107T180000
+DTEND;TZID=Europe/Bratislava:20261107T200000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261107-snehova-kralovna@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ballet\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nEspectáculo de ballet familiar 
+ basado en el clásico cuento de Hans Christian Andersen.\n\n🎟️ Entrad
+ as e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ballet] Sergei Banevich: SNEHOVÁ KR
+ ÁĽOVNÁ (La reina de las nieves)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Teatro] Lars von Trier: IDIOTI
+DTSTART;TZID=Europe/Bratislava:20261107T190000
+DTEND;TZID=Europe/Bratislava:20261107T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261107-idioti@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Teatro\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Malá scéna NDKE\, Hlavná 76\, 040 01 Koš
+ ice\n\nℹ️ Sinopsis / Programa:\nAdaptación teatral provocadora de la 
+ célebre película de Lars von Trier sobre las convenciones sociales y la 
+ búsqueda de la libertad interior.\n\n🎟️ Entradas e información ofic
+ ial:\nhttps://www.sdke.sk/
+LOCATION:Malá scéna NDKE\, Hlavná 76\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Teatro] Lars von Trier: IDIOTI
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] HRÁME KOMORNE I
+DTSTART;TZID=Europe/Bratislava:20261110T190000
+DTEND;TZID=Europe/Bratislava:20261110T203000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261110-hrame-komorne@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Foyer Domu umenia ŠFK\, Moyzesova 66
+ \, 040 01 Košice\n\nℹ️ Sinopsis / Programa:\nConcierto de cámara ín
+ timo con músicos de la orquesta filarmónica. Obras de Arvo Pärt\, Franz
+  Schubert\, Lohse\, Murphy y Glanert.\n\n🎟️ Entradas e información o
+ ficial:\nhttps://www.sfk.sk/
+LOCATION:Foyer Domu umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] HRÁME KOMORNE I
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ópera] Giacomo Puccini: TOSCA
+DTSTART;TZID=Europe/Bratislava:20261111T190000
+DTEND;TZID=Europe/Bratislava:20261111T213000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261111-tosca@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ópera\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nLa magistral ópera trágica y m
+ elodramática de Puccini. Amor\, celos\, tortura y pasión en la Roma de 1
+ 800.\n\n🎟️ Entradas e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ópera] Giacomo Puccini: TOSCA
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Teatro] Csaba Székely: BANSKÝ KVET
+DTSTART;TZID=Europe/Bratislava:20261111T190000
+DTEND;TZID=Europe/Bratislava:20261111T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261111-bansky-kvet@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Teatro\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Malá scéna NDKE\, Hlavná 76\, 040 01 Koš
+ ice\n\nℹ️ Sinopsis / Programa:\nComedia negra mordaz y premiada del dr
+ amaturgo húngaro-rumano Csaba Székely sobre la vida en un pueblo minero.
+ \n\n🎟️ Entradas e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Malá scéna NDKE\, Hlavná 76\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Teatro] Csaba Székely: BANSKÝ KVET
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Teatro] Václav Havel: VERNISÁŽ
+DTSTART;TZID=Europe/Bratislava:20261117T190000
+DTEND;TZID=Europe/Bratislava:20261117T203000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261117-vernisaz@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Teatro\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Malá scéna NDKE\, Hlavná 76\, 040 01 Koš
+ ice\n\nℹ️ Sinopsis / Programa:\nFunción conmemorativa del Día de la 
+ Lucha por la Libertad y la Democracia (17 de noviembre). Sátira brillante
+  de Václav Havel sobre el consumismo y la moral humana.\n\n🎟️ Entrad
+ as e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Malá scéna NDKE\, Hlavná 76\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Teatro] Václav Havel: VERNISÁŽ
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] B cyklus: VŠETKO NAJLEPŠIE\, NORBI!
+DTSTART;TZID=Europe/Bratislava:20261119T190000
+DTEND;TZID=Europe/Bratislava:20261119T210000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261119-norbi@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Dom umenia ŠFK\, Moyzesova 66\, 040 
+ 01 Košice\n\nℹ️ Sinopsis / Programa:\nConcierto sinfónico homenaje e
+ n conmemoración del 17 de noviembre. Ondrej Olos (director)\, Miki Skuta 
+ (piano). Obras de N. Bodnár y Francis Poulenc.\n\n🎟️ Entradas e info
+ rmación oficial:\nhttps://www.sfk.sk/
+LOCATION:Dom umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] B cyklus: VŠETKO NAJLEPŠ
+ IE\, NORBI!
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ópera] Johann Strauss: NETOPIER (Die Fledermaus / El Murciélago
+ )
+DTSTART;TZID=Europe/Bratislava:20261121T190000
+DTEND;TZID=Europe/Bratislava:20261121T213000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261121-netopier@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ópera\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nLa opereta cómica por excelenci
+ a de Johann Strauss hijo. Baile de máscaras\, champaña y refinado humor 
+ vienés.\n\n🎟️ Entradas e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ópera] Johann Strauss: NETOPIER (Die
+  Fledermaus / El Murciélago)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] Milan Paľa: Lalli · Ars Nova
+DTSTART;TZID=Europe/Bratislava:20261125T190000
+DTEND;TZID=Europe/Bratislava:20261125T203000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261125-milan-pala@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Kunsthalle Košice\, Rumanova 1\, 040
+  01 Košice\n\nℹ️ Sinopsis / Programa:\nConcierto especial dentro del 
+ festival Art & Tech Days en la Kunsthalle. Músicos virtuosos: Milan Paľa
+ \, Katarína Paľová y Miroslav Fano.\n\n🎟️ Entradas e información 
+ oficial:\nhttps://www.sfk.sk/
+LOCATION:Kunsthalle Košice\, Rumanova 1\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] Milan Paľa: Lalli · Ars 
+ Nova
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ballet] Adolphe Charles Adam: GISELLE
+DTSTART;TZID=Europe/Bratislava:20261129T190000
+DTEND;TZID=Europe/Bratislava:20261129T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261129-giselle@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ballet\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nLa joya suprema del ballet romá
+ ntico clásico. La historia del amor trágico de la campesina Giselle y la
+ s misteriosas willis.\n\n🎟️ Entradas e información oficial:\nhttps:/
+ /www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ballet] Adolphe Charles Adam: GISELLE
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ópera] Giuseppe Verdi: LA TRAVIATA
+DTSTART;TZID=Europe/Bratislava:20261201T190000
+DTEND;TZID=Europe/Bratislava:20261201T213000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261201-traviata@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ópera\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nFunción de apertura de diciembr
+ e de la popular ópera dramática de Verdi.\n\n🎟️ Entradas e informac
+ ión oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ópera] Giuseppe Verdi: LA TRAVIATA
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] A cyklus: 2x STRAUSS A ŠOSTAKOVIČ
+DTSTART;TZID=Europe/Bratislava:20261203T190000
+DTEND;TZID=Europe/Bratislava:20261203T210000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261203-strauss-sostakovic@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Dom umenia ŠFK\, Moyzesova 66\, 040 
+ 01 Košice\n\nℹ️ Sinopsis / Programa:\nGran concierto sinfónico. John
+  Fiore (director)\, Anton Gerzenberg (piano). Obras maestras de Richard St
+ rauss y Dmitri Shostakóvich.\n\n🎟️ Entradas e información oficial:\
+ nhttps://www.sfk.sk/
+LOCATION:Dom umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] A cyklus: 2x STRAUSS A ŠO
+ STAKOVIČ
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ballet] Piotr I. Tchaikovsky: LUSKÁČIK (El Cascanueces)
+DTSTART;TZID=Europe/Bratislava:20261203T190000
+DTEND;TZID=Europe/Bratislava:20261203T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261203-luskacik@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ballet\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nEl clásico navideño por excele
+ ncia de Tchaikovsky. El viaje mágico de Clara y el Cascanueces al Reino d
+ e los Dulces.\n\n🎟️ Entradas e información oficial:\nhttps://www.sdk
+ e.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ballet] Piotr I. Tchaikovsky: LUSKÁ
+ ČIK (El Cascanueces)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] PRÍBEH HUDBY: VIANOCE (Concierto de Navidad)
+DTSTART;TZID=Europe/Bratislava:20261208T180000
+DTEND;TZID=Europe/Bratislava:20261208T200000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261208-vianocny-koncert@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Dom umenia ŠFK\, Moyzesova 66\, 040 
+ 01 Košice\n\nℹ️ Sinopsis / Programa:\nConcierto festivo de Navidad pa
+ ra toda la familia. Gabriel Rovňák (director)\, Eva Hornyáková (sopran
+ o)\, coro de conservatorio. Villancicos y clásicos navideños (John Willi
+ ams\, Anderson\, Tchaikovsky).\n\n🎟️ Entradas e información oficial:
+ \nhttps://www.sfk.sk/
+LOCATION:Dom umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] PRÍBEH HUDBY: VIANOCE (Co
+ ncierto de Navidad)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ballet] Piotr I. Tchaikovsky: LUSKÁČIK (El Cascanueces)
+DTSTART;TZID=Europe/Bratislava:20261212T190000
+DTEND;TZID=Europe/Bratislava:20261212T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261212-luskacik@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ballet\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nFunción navideña de El Cascanu
+ eces en la sala histórica del Teatro Nacional de Košice.\n\n🎟️ Entr
+ adas e información oficial:\nhttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ballet] Piotr I. Tchaikovsky: LUSKÁ
+ ČIK (El Cascanueces)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ópera] Giuseppe Verdi: LA TRAVIATA
+DTSTART;TZID=Europe/Bratislava:20261228T190000
+DTEND;TZID=Europe/Bratislava:20261228T213000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261228-traviata@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ópera\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nGala especial de fin de año de 
+ La Traviata.\n\n🎟️ Entradas e información oficial:\nhttps://www.sdke
+ .sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ópera] Giuseppe Verdi: LA TRAVIATA
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Ballet] Piotr I. Tchaikovsky: LUSKÁČIK (El Cascanueces)
+DTSTART;TZID=Europe/Bratislava:20261229T190000
+DTEND;TZID=Europe/Bratislava:20261229T210000
+DTSTAMP:20261027T071716Z
+UID:ndke-20261229-luskacik@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Ballet\n🏛️ Institución: Národné d
+ ivadlo Košice\n📍 Recinto: Historická budova NDKE\, Hlavná 58\, 040 0
+ 1 Košice\n\nℹ️ Sinopsis / Programa:\nFunción especial de fin de año
+  del ballet El Cascanueces.\n\n🎟️ Entradas e información oficial:\nh
+ ttps://www.sdke.sk/
+LOCATION:Historická budova NDKE\, Hlavná 58\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sdke.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Ballet] Piotr I. Tchaikovsky: LUSKÁ
+ ČIK (El Cascanueces)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] NOVÝ ROK SO ŠTEFANOM MARGITOM (Concierto de Nochevie
+ ja)
+DTSTART;TZID=Europe/Bratislava:20261231T160000
+DTEND;TZID=Europe/Bratislava:20261231T180000
+DTSTAMP:20261027T071716Z
+UID:sfk-20261231-silvester@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Dom umenia ŠFK\, Moyzesova 66\, 040 
+ 01 Košice\n\nℹ️ Sinopsis / Programa:\nGala de fin de año con el afam
+ ado tenor Štefan Margita\, Jana Šrejma Kačírková (soprano) y la orque
+ sta filarmónica dirigida por Jan Kučera. Obras de Johann Strauss\, Tchai
+ kovsky y Dvořák.\n\n🎟️ Entradas e información oficial:\nhttps://ww
+ w.sfk.sk/
+LOCATION:Dom umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] NOVÝ ROK SO ŠTEFANOM MAR
+ GITOM (Concierto de Nochevieja)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Concierto] NOVÝ ROK SO ŠTEFANOM MARGITOM (Concierto de Año Nue
+ vo)
+DTSTART;TZID=Europe/Bratislava:20270101T190000
+DTEND;TZID=Europe/Bratislava:20270101T210000
+DTSTAMP:20261027T071716Z
+UID:sfk-20270101-novy-rok@kosice-cultura
+CREATED:20261027T071716Z
+DESCRIPTION:🎭 Tipo de evento: Concierto\n🏛️ Institución: Štátna
+  filharmónia Košice\n📍 Recinto: Dom umenia ŠFK\, Moyzesova 66\, 040 
+ 01 Košice\n\nℹ️ Sinopsis / Programa:\nConcierto solemne de Año Nuevo
+  2027 en el Dom umenia. Jan Kučera (director)\, Štefan Margita (tenor)\,
+  Jana Šrejma Kačírková (soprano).\n\n🎟️ Entradas e información o
+ ficial:\nhttps://www.sfk.sk/
+LOCATION:Dom umenia ŠFK\, Moyzesova 66\, 040 01 Košice
+STATUS:CONFIRMED
+URL:https://www.sfk.sk/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aviso (1 semana antes): [Concierto] NOVÝ ROK SO ŠTEFANOM MAR
+ GITOM (Concierto de Año Nuevo)
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

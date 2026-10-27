@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultura Košice - Calendario para iPhone</title>
+  <style>
+    :root {
+      --primary: #c2185b;
+      --primary-dark: #880e4f;
+      --accent: #1976d2;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-block;
+      background: #fce4ec;
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 1.9rem;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .cta-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(194, 24, 91, 0.35);
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 14px;
+    }
+    .cta-button:active {
+      transform: scale(0.98);
+      background: var(--primary-dark);
+    }
+    .secondary-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #f1f5f9;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .features-list {
+      list-style: none;
+      margin: 16px 0;
+    }
+    .features-list li {
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
+      font-size: 0.95rem;
+    }
+    .features-list li span.icon {
+      margin-right: 12px;
+      font-size: 1.2rem;
+    }
+    .qr-box {
+      text-align: center;
+      padding: 18px;
+      background: #f8fafc;
+      border-radius: 12px;
+      margin: 16px 0;
+      border: 1px dashed var(--border);
+    }
+    .qr-box img {
+      max-width: 180px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .instructions ol {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .instructions li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .events-preview {
+      margin-top: 24px;
+    }
+    .event-item {
+      border-left: 4px solid var(--primary);
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      background: #fdf2f8;
+      border-radius: 0 8px 8px 0;
+    }
+    .event-tag {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+    }
+    .event-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .event-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 32px;
+      padding-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Košice · Temporada 2026 / 2027</div>
+      <h1>Cultura Košice para iPhone</h1>
+      <p class="subtitle">Ópera, Ballet, Conciertos Sinfónicos y Teatro con avisos automáticos 1 semana antes.</p>
+    </header>
+
+    <div class="card">
+      <a id="btn-subscribe" class="cta-button" href="kosice_cultura.ics">
+        📲 Añadir al Calendario de mi iPhone
+      </a>
+      <a class="secondary-button" href="kosice_cultura.ics" download>
+        📥 Descargar archivo .ics directo
+      </a>
+
+      <div class="qr-box">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+          O escanea este código QR con la cámara de tu iPhone:
+        </p>
+        <img id="qr-img" src="" alt="Código QR de suscripción">
+        <p id="cal-url-display" style="font-size: 0.75rem; word-break: break-all; color: #64748b;"></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 12px;">✨ Lo que incluye este calendario</h2>
+      <ul class="features-list">
+        <li>
+          <span class="icon">🔔</span>
+          <div>
+            <strong>Aviso automático a 1 semana:</strong> Cada función incluye una alerta preconfigurada exactamente 7 días antes para que tengas tiempo de comprar entradas o planificar tu agenda.
+          </div>
+        </li>
+        <li>
+          <span class="icon">🎭</span>
+          <div>
+            <strong>Národné divadlo Košice (NDKE):</strong> Óperas clásicas (La Traviata, Tosca, Die Fledermaus), ballets (El Cascanueces, Giselle, Hamlet) y obras de teatro.
+          </div>
+        </li>
+        <li>
+          <span class="icon">🎻</span>
+          <div>
+            <strong>Štátna filharmónia Košice (ŠFK):</strong> Conciertos de la temporada en el Dom umenia y la Kunsthalle, gala de Año Nuevo y ciclo de abonos.
+          </div>
+        </li>
+        <li>
+          <span class="icon">📍</span>
+          <div>
+            <strong>Ubicaciones y enlaces directos:</strong> Cada evento tiene la dirección exacta del recinto y el enlace directo para adquirir tus entradas en la web oficial o Colosseum.
+          </div>
+        </li>
+        <li>
+          <span class="icon">🔄</span>
+          <div>
+            <strong>Actualización silenciosa:</strong> Se sincroniza automáticamente en segundo plano sin que tengas que volver a configurar nada.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card instructions">
+      <h2 style="font-size: 1.25rem; margin-bottom: 12px;">📖 Cómo añadirlo a tu iPhone paso a paso</h2>
+      <ol>
+        <li><strong>Opción más rápida (1 toque):</strong> Toca el botón fucsia <em>"Añadir al Calendario de mi iPhone"</em> en Safari de tu móvil.</li>
+        <li>iOS te preguntará: <code>¿Quieres suscribirte al calendario "Cultura Košice"?</code></li>
+        <li>Pulsa <strong>"Suscribirse"</strong> y después <strong>"Añadir"</strong>. ¡Listo!</li>
+      </ol>
+      <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted);">
+        <strong>¿Prefieres Google Calendar?</strong> En <a href="https://calendar.google.com" target="_blank">calendar.google.com</a> pulsa el <strong>"+"</strong> al lado de <em>Otros calendarios</em> &rarr; <em>Desde URL</em> y pega el enlace de este calendario. Al tener tu cuenta de Google sincronizada con tu iPhone, aparecerá de inmediato.
+      </div>
+    </div>
+
+    <div class="card events-preview">
+      <h2 style="font-size: 1.25rem; margin-bottom: 14px;">Próximas funciones confirmadas</h2>
+      <div id="events-container">
+        <!-- Renderizado dinámico desde events_data.json -->
+      </div>
+    </div>
+
+    <footer>
+      Generado con ❤️ para los amantes de la cultura en Košice.<br>
+      Datos oficiales de Národné divadlo Košice y Štátna filharmónia Košice.
+    </footer>
+  </div>
+
+  <script>
+    // Detectar la URL absoluta del archivo .ics
+    const currentOrigin = window.location.origin;
+    const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+    const icsAbsoluteUrl = `${currentOrigin}${currentPath}kosice_cultura.ics`;
+    const webcalUrl = icsAbsoluteUrl.replace(/^https?:/, 'webcal:');
+
+    // Configurar enlace del botón principal para iPhone
+    const btn = document.getElementById('btn-subscribe');
+    btn.href = webcalUrl;
+
+    const urlDisplay = document.getElementById('cal-url-display');
+    urlDisplay.textContent = icsAbsoluteUrl;
+
+    // Generar código QR usando la API pública de QuickChart
+    const qrImg = document.getElementById('qr-img');
+    qrImg.src = `https://quickchart.io/qr?text=${encodeURIComponent(webcalUrl)}&size=200&ecLevel=M`;
+
+    // Cargar y mostrar los primeros eventos
+    fetch('events_data.json')
+      .then(res => res.json())
+      .then(events => {
+        const container = document.getElementById('events-container');
+        events.slice(0, 8).forEach(ev => {
+          const div = document.createElement('div');
+          div.className = 'event-item';
+          const dt = new Date(ev.start);
+          const dateStr = dt.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+          div.innerHTML = `
+            <div class="event-tag">${ev.category} · ${ev.institution}</div>
+            <div class="event-title">${ev.title_sk}</div>
+            <div class="event-meta">📅 ${dateStr} · 📍 ${ev.venue}</div>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.log('No se pudo cargar preview de eventos en modo local:', err);
+      });
+  </script>
+</body>
+</html>
