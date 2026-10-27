@@ -26,3 +26,15 @@ Desde la raíz del repositorio:
 python -m pip install -r kosice-cultural-calendar/requirements.txt
 python kosice-cultural-calendar/generate_calendar.py
 ```
+
+
+## Aplicación configurable
+
+La web permite:
+
+- filtrar las categorías visibles (ópera, ballet, teatro, conciertos, cine, zoo, museos, arte, festivales y cultura general);
+- marcar individualmente los eventos que se quieren exportar;
+- descargar una selección personalizada en formato `.ics`, manteniendo el aviso de siete días;
+- consultar un catálogo de fuentes oficiales de Košice y alrededores en [activity_sources.json](activity_sources.json).
+
+Los eventos publicados viven en [events_data.json](events_data.json). El catálogo de fuentes está separado para poder añadir nuevos conectores sin mezclarlo con los eventos ya verificados. Una fuente catalogada no implica que sus eventos se hayan importado todavía: la aplicación muestra el enlace oficial hasta que exista un adaptador de datos fiable.
