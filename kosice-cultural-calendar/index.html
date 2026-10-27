@@ -358,7 +358,7 @@
         'TRIGGER:-P7D',
         'END:VALARM',
         'END:VEVENT'
-      ].filter(Boolean).join('\\r\\n');
+      ].filter(Boolean).join('\r\n');
     }
 
     function downloadSelection() {
@@ -367,7 +367,7 @@
         alert('Selecciona al menos un evento para exportarlo.');
         return;
       }
-      const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cultura Kosice//Calendario configurable//ES','CALSCALE:GREGORIAN','X-WR-CALNAME:Cultura Košice - Mi selección',...chosen.map(eventToIcs),'END:VCALENDAR'].join('\\r\\n') + '\\r\\n';
+      const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cultura Kosice//Calendario configurable//ES','CALSCALE:GREGORIAN','X-WR-CALNAME:Cultura Košice - Mi selección',...chosen.map(eventToIcs),'END:VCALENDAR'].join('\r\n') + '\r\n';
       const blob = new Blob([ics], {type: 'text/calendar;charset=utf-8'});
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
