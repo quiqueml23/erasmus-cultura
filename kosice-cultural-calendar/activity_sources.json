@@ -1,0 +1,92 @@
+[
+  {
+    "id": "kino-usmev",
+    "name": "Kino Úsmev",
+    "category": "Cine",
+    "area": "Košice",
+    "description": "Cine independiente, ciclos y proyecciones especiales.",
+    "url": "https://www.kinousmev.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "kino-druzba",
+    "name": "Kino Družba",
+    "category": "Cine",
+    "area": "Košice",
+    "description": "Cartelera de cine y estrenos locales.",
+    "url": "https://www.kino-druzba.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "zoo-kosice",
+    "name": "Zoo Košice",
+    "category": "Zoo y naturaleza",
+    "area": "Kavečany, Košice",
+    "description": "Visitas, actividades educativas y eventos familiares.",
+    "url": "https://www.zookosice.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "vychodoslovenske-muzeum",
+    "name": "Východoslovenské múzeum",
+    "category": "Museos",
+    "area": "Košice",
+    "description": "Exposiciones, visitas guiadas y actividades del museo.",
+    "url": "https://www.vsmuzeum.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "kunsthalle-kosice",
+    "name": "Kunsthalle/Hala umenia Košice",
+    "category": "Arte y exposiciones",
+    "area": "Košice",
+    "description": "Exposiciones, instalaciones y eventos de arte contemporáneo.",
+    "url": "https://www.kosice.sk/clanok/hala-umenia",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "tabacka",
+    "name": "Tabačka Kulturfabrik",
+    "category": "Conciertos y baile",
+    "area": "Košice",
+    "description": "Conciertos, sesiones de DJ, baile, cine y talleres.",
+    "url": "https://tabacka.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "kasarne-kulturpark",
+    "name": "Kasárne/Kulturpark",
+    "category": "Cultura general",
+    "area": "Košice",
+    "description": "Conciertos, festivales, teatro, talleres y actividades familiares.",
+    "url": "https://www.k13.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "visit-kosice",
+    "name": "Visit Košice",
+    "category": "Festivales y ciudad",
+    "area": "Košice y alrededores",
+    "description": "Agenda turística y cultural de la ciudad y su entorno.",
+    "url": "https://visitkosice.org/",
+    "source_type": "Agenda agregada"
+  },
+  {
+    "id": "sfk",
+    "name": "Štátna filharmónia Košice",
+    "category": "Conciertos",
+    "area": "Košice",
+    "description": "Conciertos sinfónicos, cámara y programas familiares.",
+    "url": "https://www.sfk.sk/",
+    "source_type": "Agenda oficial"
+  },
+  {
+    "id": "ndke",
+    "name": "Národné divadlo Košice",
+    "category": "Teatro, ópera y ballet",
+    "area": "Košice",
+    "description": "Ópera, ballet, teatro y espectáculos familiares.",
+    "url": "https://www.sdke.sk/",
+    "source_type": "Agenda oficial"
+  }
+]
