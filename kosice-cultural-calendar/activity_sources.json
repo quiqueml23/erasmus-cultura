@@ -6,7 +6,9 @@
     "area": "Košice",
     "description": "Cine independiente, ciclos y proyecciones especiales.",
     "url": "https://www.kinousmev.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "kino-druzba",
@@ -15,7 +17,9 @@
     "area": "Košice",
     "description": "Cartelera de cine y estrenos locales.",
     "url": "https://www.kino-druzba.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "zoo-kosice",
@@ -24,7 +28,9 @@
     "area": "Kavečany, Košice",
     "description": "Visitas, actividades educativas y eventos familiares.",
     "url": "https://www.zookosice.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "vychodoslovenske-muzeum",
@@ -33,7 +39,9 @@
     "area": "Košice",
     "description": "Exposiciones, visitas guiadas y actividades del museo.",
     "url": "https://www.vsmuzeum.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "kunsthalle-kosice",
@@ -42,7 +50,9 @@
     "area": "Košice",
     "description": "Exposiciones, instalaciones y eventos de arte contemporáneo.",
     "url": "https://www.kosice.sk/clanok/hala-umenia",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "tabacka",
@@ -51,7 +61,9 @@
     "area": "Košice",
     "description": "Conciertos, sesiones de DJ, baile, cine y talleres.",
     "url": "https://tabacka.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "kasarne-kulturpark",
@@ -60,7 +72,9 @@
     "area": "Košice",
     "description": "Conciertos, festivales, teatro, talleres y actividades familiares.",
     "url": "https://www.k13.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "visit-kosice",
@@ -69,7 +83,9 @@
     "area": "Košice y alrededores",
     "description": "Agenda turística y cultural de la ciudad y su entorno.",
     "url": "https://visitkosice.org/",
-    "source_type": "Agenda agregada"
+    "source_type": "Agenda agregada",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "sfk",
@@ -78,7 +94,9 @@
     "area": "Košice",
     "description": "Conciertos sinfónicos, cámara y programas familiares.",
     "url": "https://www.sfk.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   },
   {
     "id": "ndke",
@@ -87,6 +105,8 @@
     "area": "Košice",
     "description": "Ópera, ballet, teatro y espectáculos familiares.",
     "url": "https://www.sdke.sk/",
-    "source_type": "Agenda oficial"
+    "source_type": "Agenda oficial",
+    "scrape_mode": "jsonld",
+    "last_checked": null
   }
 ]
