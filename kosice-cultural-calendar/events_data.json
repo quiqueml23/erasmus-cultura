@@ -8,8 +8,11 @@
     "start": "2026-11-03T19:00:00",
     "duration_hours": 2.5,
     "description": "Una de las óperas más célebres de Giuseppe Verdi. La trágica historia de amor entre Violetta Valéry y Alfredo Germont en el París del siglo XIX.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/node/2049",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/node/2049",
+    "price_info": "5–26 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261103-navekyamen",
@@ -20,8 +23,11 @@
     "start": "2026-11-03T19:00:00",
     "duration_hours": 1.5,
     "description": "Monodrama y comedia teatral de Martin Čičvák protagonizada por Peter Cibula.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/cinohra/martin-cicvak-navekyamen-stand-stanap",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/cinohra/martin-cicvak-navekyamen-stand-stanap",
+    "price_info": "20 €",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261104-obzinky",
@@ -30,10 +36,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-11-04T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Clásica comedia de enredo eslovaca sobre el amor, las diferencias sociales y la identidad.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/cinohra/jan-palarik-dobrodruzstvo-pri-obzinkoch",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/cinohra/jan-palarik-dobrodruzstvo-pri-obzinkoch",
+    "price_info": "5–25 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261105-vtak-ohnivak",
@@ -42,10 +51,13 @@
     "venue": "Dom umenia ŠFK",
     "address": "Moyzesova 66, 040 01 Košice",
     "start": "2026-11-05T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Concierto sinfónico de la Štátna filharmónia Košice. Director: Tomáš Brauner. Obras de Maurice Ravel y la famosa suite de 'El pájaro de fuego' de Ígor Stravinski.",
-    "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "ticket_url": "https://www.sfk.sk/podujatie/vtak-ohnivak",
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/podujatie/vtak-ohnivak",
+    "price_info": "Desde 12 €; descuentos del 30 % disponibles",
+    "price_source_url": "https://www.sfk.sk/podujatie/vtak-ohnivak"
   },
   {
     "id": "ndke-20261106-hamlet",
@@ -54,10 +66,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-11-06T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Gran producción dramática de ballet basada en la tragedia inmortal de William Shakespeare, con coreografía y dirección de Ondrej Šoth.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/node/294",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/node/294",
+    "price_info": "5–21 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261107-snehova-kralovna",
@@ -66,10 +81,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-11-07T18:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Espectáculo de ballet familiar basado en el clásico cuento de Hans Christian Andersen.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/node/1930",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/node/1930",
+    "price_info": "5–30 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261107-idioti",
@@ -78,10 +96,13 @@
     "venue": "Malá scéna NDKE",
     "address": "Hlavná 76, 040 01 Košice",
     "start": "2026-11-07T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Adaptación teatral provocadora de la célebre película de Lars von Trier sobre las convenciones sociales y la búsqueda de la libertad interior.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/cinohra/lars-von-trier-idioti",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/cinohra/lars-von-trier-idioti",
+    "price_info": "25 €",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261110-hrame-komorne",
@@ -92,8 +113,11 @@
     "start": "2026-11-10T19:00:00",
     "duration_hours": 1.5,
     "description": "Concierto de cámara íntimo con músicos de la orquesta filarmónica. Obras de Arvo Pärt, Franz Schubert, Lohse, Murphy y Glanert.",
-    "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "ticket_url": "https://www.sfk.sk/podujatie/hrame-komorne-i-k1",
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/podujatie/hrame-komorne-i-k1",
+    "price_info": "15 €; descuentos del 30 % disponibles",
+    "price_source_url": "https://www.sfk.sk/podujatie/hrame-komorne-i-k1"
   },
   {
     "id": "ndke-20261111-tosca",
@@ -104,8 +128,11 @@
     "start": "2026-11-11T19:00:00",
     "duration_hours": 2.5,
     "description": "La magistral ópera trágica y melodramática de Puccini. Amor, celos, tortura y pasión en la Roma de 1800.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/opera/giacomo-puccini-tosca",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/opera/giacomo-puccini-tosca",
+    "price_info": "5–26 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261111-bansky-kvet",
@@ -114,10 +141,13 @@
     "venue": "Malá scéna NDKE",
     "address": "Hlavná 76, 040 01 Košice",
     "start": "2026-11-11T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Comedia negra mordaz y premiada del dramaturgo húngaro-rumano Csaba Székely sobre la vida en un pueblo minero.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/cinohra/csaba-szekely-bansky-kvet",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/cinohra/csaba-szekely-bansky-kvet",
+    "price_info": "25 €",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261117-vernisaz",
@@ -128,8 +158,11 @@
     "start": "2026-11-17T19:00:00",
     "duration_hours": 1.5,
     "description": "Función conmemorativa del Día de la Lucha por la Libertad y la Democracia (17 de noviembre). Sátira brillante de Václav Havel sobre el consumismo y la moral humana.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/cinohra/vaclav-havel-vernisaz",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/cinohra/vaclav-havel-vernisaz",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261119-norbi",
@@ -138,10 +171,13 @@
     "venue": "Dom umenia ŠFK",
     "address": "Moyzesova 66, 040 01 Košice",
     "start": "2026-11-19T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Concierto sinfónico homenaje en conmemoración del 17 de noviembre. Ondrej Olos (director), Miki Skuta (piano). Obras de N. Bodnár y Francis Poulenc.",
-    "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "ticket_url": "https://www.sfk.sk/podujatie/vsetko-najlepsie-norbi!",
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/podujatie/vsetko-najlepsie-norbi!",
+    "price_info": "Desde 11 €; descuentos del 30 % disponibles",
+    "price_source_url": "https://www.sfk.sk/podujatie/vsetko-najlepsie-norbi!"
   },
   {
     "id": "ndke-20261121-netopier",
@@ -152,8 +188,11 @@
     "start": "2026-11-21T19:00:00",
     "duration_hours": 2.5,
     "description": "La opereta cómica por excelencia de Johann Strauss hijo. Baile de máscaras, champaña y refinado humor vienés.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/node/609",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/node/609",
+    "price_info": "5–26 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261125-milan-pala",
@@ -165,7 +204,10 @@
     "duration_hours": 1.5,
     "description": "Concierto especial dentro del festival Art & Tech Days en la Kunsthalle. Músicos virtuosos: Milan Paľa, Katarína Paľová y Miroslav Fano.",
     "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sfk.sk/"
   },
   {
     "id": "ndke-20261129-giselle",
@@ -174,10 +216,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-11-29T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "La joya suprema del ballet romántico clásico. La historia del amor trágico de la campesina Giselle y las misteriosas willis.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/balet/adolphe-charles-adam-giselle",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/balet/adolphe-charles-adam-giselle",
+    "price_info": "5–28 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261201-traviata",
@@ -189,7 +234,10 @@
     "duration_hours": 2.5,
     "description": "Función de apertura de diciembre de la popular ópera dramática de Verdi.",
     "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261203-strauss-sostakovic",
@@ -198,10 +246,13 @@
     "venue": "Dom umenia ŠFK",
     "address": "Moyzesova 66, 040 01 Košice",
     "start": "2026-12-03T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Gran concierto sinfónico. John Fiore (director), Anton Gerzenberg (piano). Obras maestras de Richard Strauss y Dmitri Shostakóvich.",
-    "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "ticket_url": "https://www.sfk.sk/podujatie/2x-strauss-a-sostakovic",
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/podujatie/2x-strauss-a-sostakovic",
+    "price_info": "Desde 12 €; descuentos del 30 % disponibles",
+    "price_source_url": "https://www.sfk.sk/podujatie/2x-strauss-a-sostakovic"
   },
   {
     "id": "ndke-20261203-luskacik",
@@ -210,10 +261,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-12-03T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "El clásico navideño por excelencia de Tchaikovsky. El viaje mágico de Clara y el Cascanueces al Reino de los Dulces.",
-    "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "ticket_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
+    "price_info": "5–28 € (según zona)",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261208-vianocny-koncert",
@@ -222,10 +276,13 @@
     "venue": "Dom umenia ŠFK",
     "address": "Moyzesova 66, 040 01 Košice",
     "start": "2026-12-08T18:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Concierto festivo de Navidad para toda la familia. Gabriel Rovňák (director), Eva Hornyáková (soprano), coro de conservatorio. Villancicos y clásicos navideños (John Williams, Anderson, Tchaikovsky).",
-    "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "ticket_url": "https://www.sfk.sk/podujatie/pribeh-hudby-vianoce",
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/podujatie/pribeh-hudby-vianoce",
+    "price_info": "Desde 9 €; descuentos del 30 % disponibles",
+    "price_source_url": "https://www.sfk.sk/podujatie/pribeh-hudby-vianoce"
   },
   {
     "id": "ndke-20261212-luskacik",
@@ -234,10 +291,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-12-12T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Función navideña de El Cascanueces en la sala histórica del Teatro Nacional de Košice.",
     "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261228-traviata",
@@ -249,7 +309,10 @@
     "duration_hours": 2.5,
     "description": "Gala especial de fin de año de La Traviata.",
     "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "ndke-20261229-luskacik",
@@ -258,10 +321,13 @@
     "venue": "Historická budova NDKE",
     "address": "Hlavná 58, 040 01 Košice",
     "start": "2026-12-29T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Función especial de fin de año del ballet El Cascanueces.",
     "ticket_url": "https://www.sdke.sk/",
-    "institution": "Národné divadlo Košice"
+    "institution": "Národné divadlo Košice",
+    "event_url": "https://www.sdke.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
   },
   {
     "id": "sfk-20261231-silvester",
@@ -270,10 +336,13 @@
     "venue": "Dom umenia ŠFK",
     "address": "Moyzesova 66, 040 01 Košice",
     "start": "2026-12-31T16:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Gala de fin de año con el afamado tenor Štefan Margita, Jana Šrejma Kačírková (soprano) y la orquesta filarmónica dirigida por Jan Kučera. Obras de Johann Strauss, Tchaikovsky y Dvořák.",
     "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sfk.sk/"
   },
   {
     "id": "sfk-20270101-novy-rok",
@@ -282,9 +351,12 @@
     "venue": "Dom umenia ŠFK",
     "address": "Moyzesova 66, 040 01 Košice",
     "start": "2027-01-01T19:00:00",
-    "duration_hours": 2.0,
+    "duration_hours": 2,
     "description": "Concierto solemne de Año Nuevo 2027 en el Dom umenia. Jan Kučera (director), Štefan Margita (tenor), Jana Šrejma Kačírková (soprano).",
     "ticket_url": "https://www.sfk.sk/",
-    "institution": "Štátna filharmónia Košice"
+    "institution": "Štátna filharmónia Košice",
+    "event_url": "https://www.sfk.sk/",
+    "price_info": "Precio no localizado; consultar ficha oficial",
+    "price_source_url": "https://www.sfk.sk/"
   }
 ]
