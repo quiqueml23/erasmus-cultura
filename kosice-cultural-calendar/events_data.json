@@ -12,7 +12,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/node/2049",
     "price_info": "5–26 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261103-navekyamen",
@@ -27,7 +28,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/cinohra/martin-cicvak-navekyamen-stand-stanap",
     "price_info": "20 €",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261104-obzinky",
@@ -42,7 +44,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/cinohra/jan-palarik-dobrodruzstvo-pri-obzinkoch",
     "price_info": "5–25 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261105-vtak-ohnivak",
@@ -57,7 +60,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/podujatie/vtak-ohnivak",
     "price_info": "Desde 12 €; descuentos del 30 % disponibles",
-    "price_source_url": "https://www.sfk.sk/podujatie/vtak-ohnivak"
+    "price_source_url": "https://www.sfk.sk/podujatie/vtak-ohnivak",
+    "source_id": "sfk"
   },
   {
     "id": "ndke-20261106-hamlet",
@@ -72,7 +76,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/node/294",
     "price_info": "5–21 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261107-snehova-kralovna",
@@ -87,7 +92,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/node/1930",
     "price_info": "5–30 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261107-idioti",
@@ -102,7 +108,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/cinohra/lars-von-trier-idioti",
     "price_info": "25 €",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261110-hrame-komorne",
@@ -117,7 +124,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/podujatie/hrame-komorne-i-k1",
     "price_info": "15 €; descuentos del 30 % disponibles",
-    "price_source_url": "https://www.sfk.sk/podujatie/hrame-komorne-i-k1"
+    "price_source_url": "https://www.sfk.sk/podujatie/hrame-komorne-i-k1",
+    "source_id": "sfk"
   },
   {
     "id": "ndke-20261111-tosca",
@@ -132,7 +140,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/opera/giacomo-puccini-tosca",
     "price_info": "5–26 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261111-bansky-kvet",
@@ -147,7 +156,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/cinohra/csaba-szekely-bansky-kvet",
     "price_info": "25 €",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261117-vernisaz",
@@ -162,7 +172,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/cinohra/vaclav-havel-vernisaz",
     "price_info": "Precio no localizado; consultar ficha oficial",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261119-norbi",
@@ -177,7 +188,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/podujatie/vsetko-najlepsie-norbi!",
     "price_info": "Desde 11 €; descuentos del 30 % disponibles",
-    "price_source_url": "https://www.sfk.sk/podujatie/vsetko-najlepsie-norbi!"
+    "price_source_url": "https://www.sfk.sk/podujatie/vsetko-najlepsie-norbi!",
+    "source_id": "sfk"
   },
   {
     "id": "ndke-20261121-netopier",
@@ -192,7 +204,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/node/609",
     "price_info": "5–26 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261125-milan-pala",
@@ -207,7 +220,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/",
     "price_info": "Precio no localizado; consultar ficha oficial",
-    "price_source_url": "https://www.sfk.sk/"
+    "price_source_url": "https://www.sfk.sk/",
+    "source_id": "sfk"
   },
   {
     "id": "ndke-20261129-giselle",
@@ -222,7 +236,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/balet/adolphe-charles-adam-giselle",
     "price_info": "5–28 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261201-traviata",
@@ -237,7 +252,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/node/2049",
     "price_info": "5–28 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261203-strauss-sostakovic",
@@ -252,7 +268,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/podujatie/2x-strauss-a-sostakovic",
     "price_info": "Desde 12 €; descuentos del 30 % disponibles",
-    "price_source_url": "https://www.sfk.sk/podujatie/2x-strauss-a-sostakovic"
+    "price_source_url": "https://www.sfk.sk/podujatie/2x-strauss-a-sostakovic",
+    "source_id": "sfk"
   },
   {
     "id": "ndke-20261203-luskacik",
@@ -267,7 +284,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
     "price_info": "5–28 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261208-vianocny-koncert",
@@ -282,7 +300,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/podujatie/pribeh-hudby-vianoce",
     "price_info": "Desde 9 €; descuentos del 30 % disponibles",
-    "price_source_url": "https://www.sfk.sk/podujatie/pribeh-hudby-vianoce"
+    "price_source_url": "https://www.sfk.sk/podujatie/pribeh-hudby-vianoce",
+    "source_id": "sfk"
   },
   {
     "id": "ndke-20261212-luskacik",
@@ -297,7 +316,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
     "price_info": "5–28 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261228-traviata",
@@ -312,7 +332,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/node/2049",
     "price_info": "5–28 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "ndke-20261229-luskacik",
@@ -327,7 +348,8 @@
     "institution": "Národné divadlo Košice",
     "event_url": "https://www.sdke.sk/sk/balet/piotr-iljic-cajkovskij-luskacik",
     "price_info": "5–28 € (según zona)",
-    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf"
+    "price_source_url": "https://www.sdke.sk/sites/default/files/2026-01/vstupenky12012026.pdf",
+    "source_id": "ndke"
   },
   {
     "id": "sfk-20261231-silvester",
@@ -342,7 +364,8 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/",
     "price_info": "Precio no localizado; consultar ficha oficial",
-    "price_source_url": "https://www.sfk.sk/"
+    "price_source_url": "https://www.sfk.sk/",
+    "source_id": "sfk"
   },
   {
     "id": "sfk-20270101-novy-rok",
@@ -357,6 +380,7 @@
     "institution": "Štátna filharmónia Košice",
     "event_url": "https://www.sfk.sk/",
     "price_info": "Precio no localizado; consultar ficha oficial",
-    "price_source_url": "https://www.sfk.sk/"
+    "price_source_url": "https://www.sfk.sk/",
+    "source_id": "sfk"
   }
 ]
